@@ -1,5 +1,46 @@
 # Toy Robot Simulator
 
+## USAGE
+
+Use Git to clone
+`git clone https://github.com/hybmg57/toy-robot-simulator.git` 
+
+cd into the folder
+`cd toy-robot-simulator`
+
+If you have Bundler gem installed, type below to install dependancies:
+
+`bundle install`
+
+Supported version is Ruby 2.0.0
+
+## Start the app
+
+`bin/robot`
+
+## Tests, Documents
+
+RSpec, Reek, Yard and Markdown was used
+
+# To run all
+Use `rake` to run all
+
+# To run individually
+
+Rspec
+	rspec spec/
+
+Reek
+	reek lib/
+
+Yard
+	yard
+
+Markdown
+	markdown
+
+
+
 ## Description:
 
 * The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
