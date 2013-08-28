@@ -61,8 +61,8 @@ class Commands < Thor
 				y_coordinate = argument[1].to_i
 				direction = argument[2].downcase.to_sym
 				puts "Not placed. Please provide valid arguments" unless @robot.place(x_coordinate, y_coordinate, direction)
-			rescue StandardError => e
-				raise e
+			rescue StandardError => error
+				raise error
 			end
 		end
 
