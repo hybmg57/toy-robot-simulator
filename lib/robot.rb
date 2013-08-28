@@ -24,5 +24,4 @@ class Robot < Actions
 		super
 	end
 
-
 end

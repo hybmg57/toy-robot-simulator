@@ -19,11 +19,15 @@ class Actions
 	end
 
 	def place(x_coordinate, y_coordinate, direction = :north)
-		
-		if within_range(x_coordinate, y_coordinate, direction)
-			@placed = true
-			report
+		begin
+			if within_range(x_coordinate, y_coordinate, direction)
+				@placed = true
+				report
+			end
+		rescue
+			raise ArgumentError
 		end
+
 	end
 
 	def within_range(x_coordinate, y_coordinate, direction)

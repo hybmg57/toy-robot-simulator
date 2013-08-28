@@ -7,12 +7,16 @@ class Commands < Thor
 
 	attr_accessor :robot
 
+	def initialize(*args)
+		super
+		board = Board.new(5, 5)
+		@robot = Robot.new(board)
+	end
+
 	default_task :begin
 
 	desc "begin the simulation", "receives commands, transforms those commands into actions"
 	def begin
-		board = Board.new(5, 5)
-		@robot = Robot.new(board)
 		puts instructions
 
 		while argument = gets
@@ -27,8 +31,6 @@ class Commands < Thor
 	end
 
 	no_tasks do
-
-		InvalidArgument = Class.new(Exception)
 
 		def process(arguments)
 			name, argument = nil
@@ -59,8 +61,8 @@ class Commands < Thor
 				y_coordinate = argument[1].to_i
 				direction = argument[2].downcase.to_sym
 				puts "Not placed. Please provide valid arguments" unless @robot.place(x_coordinate, y_coordinate, direction)
-			rescue
-				nil
+			rescue StandardError => e
+				raise e
 			end
 		end
 
