@@ -1,0 +1,5 @@
+lib/robot.rb 0e7b718caf8a6748d55e64b8f453753bc5a2b666
+lib/board.rb 7205855283c7168958b69f03b97d5818932b8b28
+lib/report.rb bbf4a68ed850833f380349b3f7f2c17d3fbf8c97
+lib/actions.rb 142b4bef3ed3dde0be8eb6bf117605498a4a19ac
+lib/direction.rb f8bbe8bb6266469d900778df91f616bcf287e043
