@@ -44,15 +44,21 @@ describe Board do
 	describe '#left' do
 		it 'should turn left' do
 			action.place(1, 1, Direction::NORTH)
-			expect(action.left).to eq([1,1,Direction::WEST])
+			expect(action.left).to eq([1, 1, Direction::WEST])
 		end
 	end
 
 	describe '#right' do
 		it 'should turn right' do
 			action.place(1, 1, Direction::NORTH)
-			expect(action.right).to eq([1,1,Direction::EAST])
+			expect(action.right).to eq([1, 1, Direction::EAST])
 		end
 	end
 
+	describe '#report' do
+		it 'should return position' do
+			action.place(3, 4, Direction::WEST)
+			expect(action.report).to eq([3, 4, :west])
+		end
+	end
 end

@@ -27,7 +27,6 @@ class Actions
 		rescue
 			raise ArgumentError
 		end
-
 	end
 
 	def within_range(x_coordinate, y_coordinate, direction)

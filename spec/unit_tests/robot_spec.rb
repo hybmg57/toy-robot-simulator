@@ -1,13 +1,11 @@
 require_relative '../spec_helper'
 require 'robot'
-require 'actions'
 require 'direction'
 
 describe Robot do
 	
 	let(:board){ Board.new(5, 5) }
 	let(:robot){ Robot.new(board) }
-	let(:action){ Actions.new }
 
 	subject(:placement){ robot.place(1, 1, Direction::NORTH) }
 
