@@ -27,21 +27,13 @@ Use `rake` to run all
 
 ### To run individually
 
-Rspec:
+Rspec: `rspec spec/`
 
-	`rspec spec/`
+Reek: `reek lib/`
 
-Reek:
+Yard: `yard`
 
-	`reek lib/`
-
-Yard:
-
-	`yard`
-
-Markdown:
-
-	`markdown`
+Markdown: `markdown`
 
 
 
