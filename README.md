@@ -22,22 +22,26 @@ Supported version is Ruby 2.0.0
 
 RSpec, Reek, Yard and Markdown was used
 
-# To run all
+### To run all
 Use `rake` to run all
 
-# To run individually
+### To run individually
 
-Rspec
-	rspec spec/
+Rspec:
 
-Reek
-	reek lib/
+	`rspec spec/`
 
-Yard
-	yard
+Reek:
 
-Markdown
-	markdown
+	`reek lib/`
+
+Yard:
+
+	`yard`
+
+Markdown:
+
+	`markdown`
 
 
 
