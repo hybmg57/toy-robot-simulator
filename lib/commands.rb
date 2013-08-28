@@ -55,39 +55,33 @@ class Commands < Thor
 		def place(arguments)
 			begin 
 				argument = String(arguments).split(",")
-				x_coordinate = arguments[0].to_i
-				y_coordinate = arguments[1].to_i
-				direction = arguments[2].downcase.to_sym
-				puts "Not placed. Please provide valid arguments" if @robot.place(x_coordinate, y_coordinate, direction)
+				x_coordinate = argument[0].to_i
+				y_coordinate = argument[1].to_i
+				direction = argument[2].downcase.to_sym
+				puts "Not placed. Please provide valid arguments" unless @robot.place(x_coordinate, y_coordinate, direction)
 			rescue
-				puts "Error - Not placed. Please provide valid arguments"
+				nil
 			end
 		end
 
 		def move
-			return check_if_placed
-			@robot.move_forward
+			@robot.move_forward if @robot.placed
 		end
 
 		def left
-			return check_if_placed
+			@robot.left if @robot.placed
 		end
 
 		def right
-			return check_if_placed
+			@robot.right if @robot.placed
 		end
 
 		def report
-			# return check_if_placed
-			puts @robot.report_current_position
+			puts @robot.report_current_position if @robot.placed
 		end
 
 		def invalid_command(name)
 			puts "Invalid command: #{name} is not recognised."
-		end
-
-		def check_if_placed
-			nil unless @robot.placed == true
 		end
 
 		def instructions

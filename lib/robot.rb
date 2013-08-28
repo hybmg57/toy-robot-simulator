@@ -13,19 +13,16 @@ class Robot < Actions
 	end
 
 	def left
-		super if placed?
+		super
 	end
 
 	def right
-		super if placed?
+		super
 	end
 
 	def move_forward
-		super if placed?
+		super
 	end
 
-	def placed?
-		@action.placed
-	end
 
 end

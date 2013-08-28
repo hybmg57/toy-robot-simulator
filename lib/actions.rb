@@ -19,29 +19,32 @@ class Actions
 	end
 
 	def place(x_coordinate, y_coordinate, direction = :north)
-		self.x_coordinate, self.y_coordinate, self.direction = x_coordinate, y_coordinate, direction
-		if within_range?
+		
+		if within_range(x_coordinate, y_coordinate, direction)
 			@placed = true
-			puts @report = Report.new(x_coordinate, y_coordinate, direction).to_a 
+			report
 		end
 	end
 
-	def within_range?
+	def within_range(x_coordinate, y_coordinate, direction)
+		self.x_coordinate, self.y_coordinate, self.direction = x_coordinate, y_coordinate, direction if
 		x_coordinate.between?(@landscape.left_limit, @landscape.right_limit) && 
 		y_coordinate.between?(@landscape.bottom_limit, @landscape.top_limit) &&
 		@map.directions.grep(direction).present?
 	end
 
 	def left
-		@map.left(self.direction)
+		self.direction = @map.left(self.direction)
+		report
 	end
 
 	def right
-		@map.right(self.direction)
+		self.direction = @map.right(self.direction)
+		report
 	end
 
 	def move_forward(unit = 1)
-		x_coord, y_coord, direct = x_coordinate, y_coordinate, direction
+		x_coord, y_coord, direct = self.x_coordinate, self.y_coordinate, self.direction
 
 		case direct
 		when Direction::SOUTH
@@ -57,6 +60,10 @@ class Actions
 
 	def report_current_position
 		"#{@report.join(', ')}" if @report
+	end
+
+	def report
+		@report = Report.new(self.x_coordinate, self.y_coordinate, self.direction).to_a 
 	end
 
 end

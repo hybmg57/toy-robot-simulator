@@ -12,5 +12,10 @@ describe Commands do
 		end
 	end
 
+	describe '#process' do
+		it 'place the robot' do
+			command.place("place 3,4,north")
+		end
+	end
 
 end

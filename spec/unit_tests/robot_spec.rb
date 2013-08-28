@@ -14,14 +14,14 @@ describe Robot do
 	describe '#left' do
 		it 'should turn left' do
 			placement
-			expect(robot.left).to eq(Direction::WEST)
+			expect(robot.left).to eq([1,1,Direction::WEST])
 		end
 	end
 
 	describe '#right' do
 		it 'should turn right' do
 			placement
-			expect(robot.right).to eq(Direction::EAST)
+			expect(robot.right).to eq([1,1,Direction::EAST])
 		end
 	end
 
