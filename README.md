@@ -27,6 +27,7 @@ Use `rake` to run all
 
 ### To run individually
 
+<<<<<<< HEAD
 Rspec: 
 `rspec spec/`
 
@@ -38,6 +39,15 @@ Yard:
 
 Markdown: 
 `markdown`
+=======
+Rspec: `rspec spec/`
+
+Reek: `reek lib/`
+
+Yard: `yard`
+
+Markdown: `markdown`
+>>>>>>> parent of 3e61a5b... Updated Readme
 
 
 
