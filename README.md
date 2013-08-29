@@ -38,13 +38,6 @@ Yard:
 
 Markdown: 
 `markdown`
-Rspec: `rspec spec/`
-
-Reek: `reek lib/`
-
-Yard: `yard`
-
-Markdown: `markdown`
 
 
 
