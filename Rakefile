@@ -6,12 +6,21 @@ rescue LoadError => err
 	warn err.message
 end
 
-desc "To run all tasks: RSpec, Reek, Yard and Markdown"
+desc "Run test/codesmell checks with rspec and reek"
 task :default => [:spec, :reek]
 
-RSpec::Core::RakeTask.new
+desc "Perform Rspec tests"
+task :spec do 
+  RSpec::Core::RakeTask.new
+end
 
-Reek::Rake::Task.new
+desc "Code smell detector with Reek"
+task :reek do
+  system('reek lib/')
+end
 
-system('yard')
-system('markdown')
+desc "Generate documentation"
+task :doc do
+  system('yard')
+  #system('markdown')
+end
